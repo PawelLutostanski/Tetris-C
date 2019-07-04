@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\figure">
+      <UniqueIdentifier>{855eeab7-398f-440a-bb91-798fb7a199fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\figure\figureAsList">
+      <UniqueIdentifier>{8871550d-db13-434b-9d05-9582d04ed420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\displaying">
+      <UniqueIdentifier>{5cd2a59d-3faf-46d5-ab94-7d5e0451f3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\displaying\menu">
+      <UniqueIdentifier>{a34a25b5-9ef9-4e1e-91f2-78c30dca230f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\displaying\game">
+      <UniqueIdentifier>{7d6bddfb-52b5-4da9-88fb-1a9424290c14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Leaderboard">
+      <UniqueIdentifier>{81577dac-aa5a-41ba-adf9-023926d15b56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structure.c">
+      <Filter>Source Files\figure</Filter>
+    </ClCompile>
+    <ClCompile Include="figureOper.c">
+      <Filter>Source Files\figure\figureAsList</Filter>
+    </ClCompile>
+    <ClCompile Include="setFigure.c">
+      <Filter>Source Files\figure\figureAsList</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files\displaying\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="gameName.c">
+      <Filter>Source Files\displaying\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="array.c">
+      <Filter>Source Files\displaying\game</Filter>
+    </ClCompile>
+    <ClCompile Include="game.c">
+      <Filter>Source Files\displaying\game</Filter>
+    </ClCompile>
+    <ClCompile Include="file.c">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="structure.h">
+      <Filter>Source Files\figure</Filter>
+    </ClInclude>
+    <ClInclude Include="figureOper.h">
+      <Filter>Source Files\figure\figureAsList</Filter>
+    </ClInclude>
+    <ClInclude Include="setFigure.h">
+      <Filter>Source Files\figure\figureAsList</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Source Files\displaying\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="gameName.h">
+      <Filter>Source Files\displaying\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="array.h">
+      <Filter>Source Files\displaying\game</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Source Files\displaying\game</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>Source Files\Leaderboard</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+﻿  main.c
+c:\users\lutek\desktop\#programy\cp\c\project\project\project\main.c(40): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[15]'
+c:\users\lutek\desktop\#programy\cp\c\project\project\project\main.c(40): warning C4024: 'savingScore': different types for formal and actual parameter 1
+  Project.vcxproj -> C:\Users\Lutek\Desktop\#PROGRAMY\cp\C\Project\Project\Debug\Project.exe
