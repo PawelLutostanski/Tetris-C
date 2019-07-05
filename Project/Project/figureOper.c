@@ -2,18 +2,18 @@
 
 int leftCheck(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList *head)
 {
-	int value = 1;
+	int noCollision = 1;
 	while (head) {
 		int xCoord = head->element->position.x;
 		int yCoord = head->element->position.y;
-		if (arrayOfChars[yCoord][xCoord - 1] == NICE_SYMBOL || arrayOfChars[yCoord][xCoord-1]== -37)//-37 is side frame
+		if (arrayOfChars[yCoord][xCoord - 1] == FALLEN_BLOCK || arrayOfChars[yCoord][xCoord-1]== -37)//-37 is side frame
 		{
-			value = 0;
+			noCollision = 0;
 			break;
 		}
 		head = head->next;
 	}
-	return value;
+	return noCollision;
 
 }
 void allLeft(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
@@ -30,18 +30,18 @@ void allLeft(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
 
 int rightCheck(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList *head)
 {
-	int value = 1;
+	int noColision = 1;
 	while (head) {
 		int xCoord = head->element->position.x;
 		int yCoord = head->element->position.y;
-		if (arrayOfChars[yCoord][xCoord + 1] == NICE_SYMBOL || arrayOfChars[yCoord-1][xCoord+1] == -37)//-37 is side frame
+		if (arrayOfChars[yCoord][xCoord + 1] == FALLEN_BLOCK || arrayOfChars[yCoord-1][xCoord+1] == -37)//-37 is side frame
 		{
-			value = 0;
+			noColision = 0;
 			break;
 		}
 		head = head->next;
 	}
-	return value;
+	return noColision;
 
 }
 void allRight(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
@@ -57,15 +57,15 @@ void allRight(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
 }
 int checkBottom(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList* head)
 {
-	int collision_bool = 0;
+	int collision = 0;
 	while (head)
 	{
-		if (head->element->position.y+1 == Y_MAP - 1 || arrayOfChars[head->element->position.y+1][head->element->position.x] == NICE_SYMBOL) {
-			collision_bool = 1;
+		if (head->element->position.y+1 == Y_MAP - 1 || arrayOfChars[head->element->position.y+1][head->element->position.x] == FALLEN_BLOCK) {
+			collision = 1;
 		}
 		head = head->next;
 	}
-	return collision_bool;
+	return collision;
 }
 
 int bottomDown(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
@@ -80,7 +80,7 @@ int bottomDown(char arrayOfChars[Y_MAP][X_MAP], struct FigureLList **head)
 		int coordY = (*temp)->element->position.y;
 		if (collision)
 		{
-			addPoint(&arrayOfChars[0][0], coordX, coordY, NICE_SYMBOL);
+			addPoint(&arrayOfChars[0][0], coordX, coordY, FALLEN_BLOCK);
 			(*temp)->element->position.y = 0;//set to begining
 			(*temp)->element->position.x = X_MAP / 2;
 		

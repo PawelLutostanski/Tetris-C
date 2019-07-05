@@ -1,11 +1,11 @@
 #include "gameName.h"
 
-void symbolXTimes(int X, char sym)
+void symbolXTimes(int X, char symbol)
 {
 	int i;
 	for (i = 0; i < X; i++)
 	{
-		printf("%c", sym);
+		printf("%c", symbol);
 	}
 }
 
@@ -94,26 +94,26 @@ void row5Print()
 	symbolXTimes(8, -37);
 }	
 
-void displayGameName(int col, int line)
+void displayGameName(int col, int row)
 {
 	//1st row
-	gotoxy(col, line);
+	gotoxy(col, row);
 	row1Print();
 
 	//2nd row
-	gotoxy(col, line + 1);
+	gotoxy(col, row + 1);
 	row2Print();
 
 	//3rd row
-	gotoxy(col, line + 2);
+	gotoxy(col, row + 2);
 	row3Print();
 
 	//4th row
-	gotoxy(col, line + 3);
+	gotoxy(col, row + 3);
 	row4Print();
 
 	//5th row
-	gotoxy(col, line + 4);
+	gotoxy(col, row + 4);
 	row5Print();
 	
 }

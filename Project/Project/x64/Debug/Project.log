@@ -1,0 +1,12 @@
+﻿  game.c
+c:\users\pawel\desktop\projectcp\project\project\structure.h(12): warning C4091: "typedef ": zignorowano na lewo od "Point" podczas gdy brak deklaracji zmiennej
+c:\users\pawel\desktop\projectcp\project\project\game.c(68): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(73): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(79): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(82): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(88): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(93): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(107): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(109): warning C4048: różne indeksy dolne tablicy: „char (*)[18]” i „char (*)[47][18]”
+c:\users\pawel\desktop\projectcp\project\project\game.c(71): warning C4047: "inicjowanie": "char" różni się w poziomach operatorów pośrednich od "void *"
+  Project.vcxproj -> C:\Users\Pawel\Desktop\ProjectCP\Project\x64\Debug\Project.exe

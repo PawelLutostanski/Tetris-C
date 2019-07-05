@@ -1,5 +1,5 @@
 #include "setFigure.h"
-#include "array.h"
+
 int findMinX(struct FigureLList** head)
 {
 	int minX=0;
@@ -47,9 +47,9 @@ void randomFigure(struct FigureLList** head, int difficulty)
 
 	int posX =0;
 	int posY = 0;
-	char symbol = FINE_SYMBOL;
-	struct Block* newBlock=initBlock(posX,posY, FINE_SYMBOL);//initialisation
-	add(head, newBlock);//at least 1 block
+	char symbol = CONTROLED_BLOCK;
+	struct Block* newBlock=initBlock(posX,posY, CONTROLED_BLOCK);//initialisation
+	addToList(head, newBlock);//at least 1 block
 	int blocksOfFigure = (rand() % (difficulty*2))+1;//at least 2 
 	if(blocksOfFigure>((X_MAP/2)-2))
 	{
@@ -75,8 +75,8 @@ void randomFigure(struct FigureLList** head, int difficulty)
 		{
 			posX--;
 		}
-		newBlock=initBlock(posX, posY, FINE_SYMBOL);
-		add(head, newBlock);
+		newBlock=initBlock(posX, posY, CONTROLED_BLOCK);
+		addToList(head, newBlock);
 
 		blocksOfFigure--;
 	}

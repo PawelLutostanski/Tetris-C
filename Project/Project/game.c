@@ -1,23 +1,23 @@
 #include "game.h"
 
-void gotoxy(int column, int line)
+void gotoxy(int column, int row)
 {
 	COORD coord;
 	coord.X = column;
-	coord.Y = line;
+	coord.Y = row;
 	SetConsoleCursorPosition(
 		GetStdHandle(STD_OUTPUT_HANDLE), coord
 	);
 }
 
-int points(int addThem, char whatToDo)
+int points(int addThem, char mode)
 {
 	static int points = 0;
-	if (whatToDo=='a')//a - add
+	if (mode=='a')//a - add
 	{
 		points += addThem;
 	}
-	else if (whatToDo=='r')//r-reset
+	else if (mode=='r')//r-reset
 	{
 		points = 0;
 	}
@@ -28,7 +28,7 @@ void displayScore(int score)
 {
 
 	gotoxy(4*X_MAP , 5);
-	printf("SCORE : %d", score);
+	printf("SCORE : %10d", score);
 }
 
 int fail() {
@@ -46,7 +46,7 @@ int fail() {
 	printf(" Press ENTER to return to menu\n");
 	Sleep(3000);
 	char c = _getch();
-	while (c != '\r') 
+	while (c != '\r'&&c!=' ') 
 	{
 		gotoxy(25, 20);
 		printf("                               ");
@@ -60,15 +60,15 @@ int fail() {
 
 }
 
-int game(int dif) {
+int game(int difficulty) {
 	
 	struct FigureLList *figure = NULL;
-	randomFigure(&figure, dif);
+	randomFigure(&figure, difficulty);
 	char gameMap[Y_MAP][X_MAP];
 	fillArray(&gameMap);
 
 	displayScore(points(0,'r'));
-	char  state = NULL;
+	char  key = NULL;
 	while (1) {
 		if (addLine(Y_MAP / 5 +2, &gameMap))
 		{
@@ -76,29 +76,29 @@ int game(int dif) {
 			fail();
 			return points(0,'a'); //return to menu
 		}
-		addAllBlocks(&gameMap, &figure, FINE_SYMBOL);// add figure to array
+		addAllBlocks(&gameMap, &figure, CONTROLED_BLOCK);// add figure to array
 		gotoxy(0, 0);
 		display(gameMap);
 		addAllBlocks(&gameMap, &figure, ' ');// clear figure from array
-		state = _getch();//taking char from input stream
+		key = _getch();//taking char from input stream
 		int move = 0;
-		if (state == 'a' || state == 'A' || state == 75)//a and A(in case of capslk) and left arrow  keys
+		if (key == 'a' || key == 'A' || key == 75)//a and A(in case of capslk) and left arrow  keys
 		{
 			move = 1;
 			allLeft(&gameMap, &figure);
 		}
-		else if (state == 'd' || state == 'D' || state == 77)//d and D(in case of capslk) and right keys
+		else if (key == 'd' || key == 'D' || key == 77)//d and D(in case of capslk) and right keys
 		{
 			move = 1;
 			allRight(&gameMap, &figure);
 		}
-		else if (state == '`' || state == '~' || state == 27) //tilde or  esc
+		else if ( key == 27) //tilde or  esc
 		{
 			clearList(&figure);
-			
+			fail();
 			return points(0,'a');
 		}
-		else if (state == 80 || state == 72||state=='w' ||state =='W' || state == 's' || state == 'S')
+		else if (key == 80 || key == 72||key=='w' ||key =='W' || key == 's' || key == 'S')
 		{
 			move = 1;
 		}
@@ -106,12 +106,12 @@ int game(int dif) {
 		{
 			if (bottomDown(&gameMap, &figure)) {//check colision(if there is the fill wtih NICE_SYMBOL)
 				clearList(&figure);
-				int val = checkRows(&gameMap, NICE_SYMBOL);
+				int val = checkRows(&gameMap);
 				if (val)
 				{
 					displayScore(points(100 * val*val, 'a')); // squre of deleted rows times 100
 				}
-				randomFigure(&figure, dif);
+				randomFigure(&figure, difficulty);
 			}
 		}
 	}

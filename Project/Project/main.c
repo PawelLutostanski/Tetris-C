@@ -1,5 +1,5 @@
 #include "menu.h"
-#include "file.h"
+#include "gameName.h"
 
 int main() 
 {
@@ -28,7 +28,7 @@ int main()
 					system("cls");
 					char name[15];
 					gotoxy(10, 10);
-					printf("ENTER YOUR NAME: \n\tolny 14 first letters will become your name\n");
+					printf("ENTER YOUR NAME: \n\tmaximal name length is 14 letters, the rest of letters will be ignored\n");
 					gotoxy(27, 10);
 					fgets(name, 15, stdin);
 					printf("\n\n\t\t Press ESCAPE to return to menu or ANY OTHER KEY to contiunue ");
@@ -38,11 +38,6 @@ int main()
 					{
 						int points = game(val);
 						savingScore(&name, points);
-						showLeaderboard(10, 10);
-						key = _getch();
-						while (key != '\r'&&key != 27) {
-							key = _getch();
-						}
 					}
 				}
 				system("cls");
@@ -51,7 +46,7 @@ int main()
 			{
 				showLeaderboard(10, 10);
 				key = _getch();
-				while (key != '\r'&&key!=27) {
+				while (key != '\r'&&key!=27&&key!=' ') {
 					key = _getch();
 				}
 				system("cls");

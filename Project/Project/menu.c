@@ -41,13 +41,13 @@ int selectDiff(char key)
 	}
 }
 
-void displayMenu(int whereAsterix)
+void displayMenu(int whereMark)
 {
 	gotoxy(0, 13);
 	printf("\t      NEW GAME\n\n");
 	printf("\t      LEADERBOARD\n\n");
 	printf("\t      EXIT\n\n");
-	gotoxy(10, 13 + whereAsterix*2);
+	gotoxy(10, 13 + whereMark*2);
 
 	printf("%c",-81);
 }

@@ -74,7 +74,7 @@ void deleteRow(char arrayOfChars[Y_MAP][X_MAP],int whichRow)
 		}
 	}
 }
-int checkRows(char arrayOfChars[Y_MAP][X_MAP], char symbol) 
+int checkRows(char arrayOfChars[Y_MAP][X_MAP]) 
 {
 	int rowFullcount = 0;
 	int i;
@@ -103,7 +103,7 @@ int addLine(int whichRow, char arrayOfChars[Y_MAP][X_MAP])
 	int i;
 	for (i = 1; i < X_MAP-1; i++)
 	{
-		if (arrayOfChars[whichRow][i] == NICE_SYMBOL)
+		if (arrayOfChars[whichRow][i] == FALLEN_BLOCK)
 		{
 			fail=1;//fail game
 		}

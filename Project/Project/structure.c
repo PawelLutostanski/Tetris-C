@@ -1,7 +1,7 @@
 #include "structure.h"
 
 
-void add(struct FigureLList** head, struct Block* data) // adding new node to a list
+void addToList(struct FigureLList** head, struct Block* data) // adding new node to a list
 {
 	struct FigureLList** tmp;
 	tmp = head;
